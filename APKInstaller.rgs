@@ -1,0 +1,26 @@
+HKCR
+{
+	NoRemove CLSID
+	{
+		ForceRemove {9981d3e3-5c87-4bcf-b6d3-fc642bc389ba} = s 'APKInstaller class'
+		{
+			ForceRemove Programmable
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			TypeLib = s '{d1c7558b-a4b6-43bd-b52f-ce852cff69d0}'
+			Version = s '1.0'
+		}
+	}
+	NoRemove .apk
+    {
+        NoRemove ShellEx
+        {
+            NoRemove ContextMenuHandlers
+            {
+                ForceRemove APKInstaller = s '{9981d3e3-5c87-4bcf-b6d3-fc642bc389ba}'
+            }
+        }
+    }
+}

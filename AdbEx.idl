@@ -1,0 +1,54 @@
+// AdbEx.idl: AdbEx 的 IDL 源
+//
+
+// 此文件将由 MIDL 工具处理以
+// 生成类型库(AdbEx.tlb)和封送处理代码。
+
+import "oaidl.idl";
+import "ocidl.idl";
+
+[
+	object,
+	uuid(9669b8ee-7490-418f-9867-2d92762a2ac8),
+	dual,
+	nonextensible,
+	pointer_default(unique)
+]
+interface IAPKInstaller : IDispatch
+{
+};
+[
+	object,
+	uuid(5ccff210-ace8-4124-9d0c-6c0456dbdfa5),
+	dual,
+	nonextensible,
+	pointer_default(unique)
+]
+interface ITotalMenu : IDispatch
+{
+};
+[
+	uuid(d1c7558b-a4b6-43bd-b52f-ce852cff69d0),
+	version(1.0),
+]
+library AdbExLib
+{
+	importlib("stdole2.tlb");
+	[
+		uuid(9981d3e3-5c87-4bcf-b6d3-fc642bc389ba)
+	]
+	coclass APKInstaller
+	{
+		[default] interface IAPKInstaller;
+	};
+	[
+		uuid(d63f7082-085b-4069-9165-4183b1d7ca9b)
+	]
+	coclass TotalMenu
+	{
+		[default] interface ITotalMenu;
+	};
+};
+
+import "shobjidl.idl";
+import "shobjidl.idl";

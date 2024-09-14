@@ -1,0 +1,46 @@
+HKCR
+{
+	NoRemove CLSID
+	{
+		ForceRemove {d63f7082-085b-4069-9165-4183b1d7ca9b} = s 'TotalMenu class'
+		{
+			ForceRemove Programmable
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			TypeLib = s '{d1c7558b-a4b6-43bd-b52f-ce852cff69d0}'
+			Version = s '1.0'
+		}
+	}
+	NoRemove *
+    {
+        NoRemove ShellEx
+        {
+            NoRemove ContextMenuHandlers
+            {
+                ForceRemove APKInstaller = s '{d63f7082-085b-4069-9165-4183b1d7ca9b}'
+            }
+        }
+    }
+	    NoRemove Directory
+    {
+        NoRemove ShellEx
+        {
+            NoRemove ContextMenuHandlers
+            {
+                ForceRemove APKInstaller = s '{d63f7082-085b-4069-9165-4183b1d7ca9b}'
+            }
+        }
+    }
+    NoRemove Drive
+    {
+        NoRemove ShellEx
+        {
+            NoRemove ContextMenuHandlers
+            {
+                ForceRemove APKInstaller = s '{d63f7082-085b-4069-9165-4183b1d7ca9b}'
+            }
+        }
+    }
+}
